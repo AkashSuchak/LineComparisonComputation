@@ -13,7 +13,20 @@ namespace LineComparison
 
             return lengthOfLine;
         }
-        
+        public void Compare(double line1, double line2)
+        {
+            //Comaprison assign to Variable
+            int linesCompare = (line1.CompareTo(line2));
+            
+            //Condition to Check Comparison
+            if (linesCompare.Equals(0))            
+                Console.WriteLine(" Result : Both the lines are having same length or both lines are equal.");            
+            else if (linesCompare.Equals(-1))            
+                Console.WriteLine(" Result : Length of FirstLine Is lesser Than secondLine");            
+            else            
+                Console.WriteLine(" Result : Length of FirstLine Is Greater Than secondLine");
+            
+        }
         static void Main(string[] args)
         {
             //Display Welcome Message
@@ -24,7 +37,7 @@ namespace LineComparison
             
             //call function to set value
             double line1 = lengthOfLine.LengthOfLine(5, 6, 7, 5);
-            double line2 = lengthOfLine.LengthOfLine(2, 8, 6, 12);
+            double line2 = lengthOfLine.LengthOfLine(2, 8, 1, 12);
 
             //Display Length of Lines
             Console.WriteLine(" Length of Line 1 : " + line1 + " \n");
@@ -32,6 +45,9 @@ namespace LineComparison
 
             //Check Equality
             Console.WriteLine("Length of Lines are Equal : " + line1.Equals(line2));
+
+            //Fuction call to Compare Lines
+            lengthOfLine.Compare(line1, line2);
         }
     }
 }
