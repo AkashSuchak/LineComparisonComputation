@@ -3,17 +3,8 @@
 namespace LineComparison
 {
     class Program
-    {
-        public double LengthOfLine(int x1, int y1, int x2, int y2)
-        {
-            //Operation
-            double point1 = (x2 - x1);
-            double point2 = (y2 - y1);
-            double lengthOfLine = Math.Sqrt(Math.Pow(point1, 2) + Math.Pow(point2, 2));
-
-            return lengthOfLine;
-        }
-        public void Compare(double line1, double line2)
+    {        
+        public static void Compare(double line1, double line2)
         {
             //Comaprison assign to Variable
             int linesCompare = (line1.CompareTo(line2));
@@ -32,12 +23,10 @@ namespace LineComparison
             //Display Welcome Message
             Console.WriteLine("Welcome to Line Comaprison Computation");
 
-            //Object of a class
-            Program lengthOfLine = new Program();
-            
             //call function to set value
-            double line1 = lengthOfLine.LengthOfLine(5, 6, 7, 5);
-            double line2 = lengthOfLine.LengthOfLine(2, 8, 1, 12);
+            ChildClass objOfChildClass = new ChildClass();
+            double line1 = objOfChildClass.LengthOfLine(5, 6, 7, 5);
+            double line2 = objOfChildClass.LengthOfLine(2, 8, 1, 12);
 
             //Display Length of Lines
             Console.WriteLine(" Length of Line 1 : " + line1 + " \n");
@@ -47,7 +36,7 @@ namespace LineComparison
             Console.WriteLine("Length of Lines are Equal : " + line1.Equals(line2));
 
             //Fuction call to Compare Lines
-            lengthOfLine.Compare(line1, line2);
+            Compare(line1, line2);
         }
     }
 }
