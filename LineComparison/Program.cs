@@ -24,9 +24,11 @@ namespace LineComparison
             Console.WriteLine("Welcome to Line Comaprison Computation");
 
             //call function to set value
-            ChildClass objOfChildClass = new ChildClass();
-            double line1 = objOfChildClass.LengthOfLine(5, 6, 7, 5);
-            double line2 = objOfChildClass.LengthOfLine(2, 8, 1, 12);
+            ChildClass objOfChildClass = new ChildClass(5, 6, 7, 5);
+            ChildClass objOfChildClass1 = new ChildClass(3, 4, 7, 50);
+
+            double line1 = objOfChildClass.LengthOfLine();
+            double line2 = objOfChildClass1.LengthOfLine();
 
             //Display Length of Lines
             Console.WriteLine(" Length of Line 1 : " + line1 + " \n");

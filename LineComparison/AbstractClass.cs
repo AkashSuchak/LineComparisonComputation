@@ -5,10 +5,15 @@ using System.Text;
 namespace LineComparison
 {
     abstract class AbstractClass
-    {
-        /*private double X1, Y1, X2, Y2;
+    {               
+        public abstract double LengthOfLine();        
+    }
 
-        public AbstractClass(double X1, double Y1, double X2, double Y2) 
+    class ChildClass : AbstractClass
+    {
+        public double X1, Y1, X2, Y2;
+
+        public ChildClass(double X1, double Y1, double X2, double Y2)
         {
             SetValues(X1, Y1, X2, Y2);
         }
@@ -19,7 +24,7 @@ namespace LineComparison
             SetX2(X2);
             SetY2(Y2);
         }
-        public double GetX1() 
+        public double GetX1()
         {
             return X1;
         }
@@ -36,20 +41,14 @@ namespace LineComparison
             return X2;
         }
         public void SetX2(double X2) => this.X2 = X2;
-        
+
         public double GetY2()
         {
             return Y2;
         }
         public void SetY2(double Y2) => this.Y2 = Y2;
-        */
-        public abstract double LengthOfLine(int x1, int y1, int x2, int y2);        
-    }
 
-    class ChildClass : AbstractClass
-    {
-               
-        public override double LengthOfLine(int X1, int Y1, int X2, int Y2)
+        public override double LengthOfLine()
         {            
             //Operation
             double point1 = (X2 - X1);
