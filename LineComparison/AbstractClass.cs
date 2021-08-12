@@ -4,15 +4,20 @@ using System.Text;
 
 namespace LineComparison
 {
+    //Abstract Class
     abstract class AbstractClass
     {               
+        //Abstract Method
         public abstract double LengthOfLine();        
     }
 
+    //Child Class
     class ChildClass : AbstractClass
     {
+        //Instance
         public double X1, Y1, X2, Y2;
 
+        //Parameterized Constructor
         public ChildClass(double X1, double Y1, double X2, double Y2)
         {
             SetValues(X1, Y1, X2, Y2);
@@ -24,6 +29,8 @@ namespace LineComparison
             SetX2(X2);
             SetY2(Y2);
         }
+
+        //Get Set methods
         public double GetX1()
         {
             return X1;
@@ -48,6 +55,7 @@ namespace LineComparison
         }
         public void SetY2(double Y2) => this.Y2 = Y2;
 
+        //Calculating Length of Line
         public override double LengthOfLine()
         {            
             //Operation
@@ -56,6 +64,21 @@ namespace LineComparison
             double lengthOfLine = Math.Sqrt(Math.Pow(point1, 2) + Math.Pow(point2, 2));
 
             return lengthOfLine;             
+        }
+        //Comparison of Lines
+        public static void Compare(double line1, double line2)
+        {
+            //Comaprison assign to Variable
+            int linesCompare = (line1.CompareTo(line2));
+
+            //Condition to Check Comparison
+            if (linesCompare.Equals(0))
+                Console.WriteLine(" Result : Both the lines are having same length or both lines are equal.");
+            else if (linesCompare.Equals(-1))
+                Console.WriteLine(" Result : Length of FirstLine Is lesser Than secondLine");
+            else
+                Console.WriteLine(" Result : Length of FirstLine Is Greater Than secondLine");
+
         }
     }
 }

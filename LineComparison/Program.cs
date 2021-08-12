@@ -4,20 +4,7 @@ namespace LineComparison
 {
     class Program
     {        
-        public static void Compare(double line1, double line2)
-        {
-            //Comaprison assign to Variable
-            int linesCompare = (line1.CompareTo(line2));
-            
-            //Condition to Check Comparison
-            if (linesCompare.Equals(0))            
-                Console.WriteLine(" Result : Both the lines are having same length or both lines are equal.");            
-            else if (linesCompare.Equals(-1))            
-                Console.WriteLine(" Result : Length of FirstLine Is lesser Than secondLine");            
-            else            
-                Console.WriteLine(" Result : Length of FirstLine Is Greater Than secondLine");
-            
-        }
+       
         static void Main(string[] args)
         {
             //Display Welcome Message
@@ -38,7 +25,7 @@ namespace LineComparison
             Console.WriteLine("Length of Lines are Equal : " + line1.Equals(line2));
 
             //Fuction call to Compare Lines
-            Compare(line1, line2);
+             ChildClass.Compare(line1, line2);
         }
     }
 }
